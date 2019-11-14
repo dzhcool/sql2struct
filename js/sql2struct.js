@@ -87,11 +87,11 @@ new Vue({
                             }
                             structResult += '\n\t' + fieldName + ' ' + fieldType + ' '
                             structArr = []
-                            if (this.useGorm) {
-                                structArr.push('gorm:"column:'+ fieldJsonName +'"')
-                            }
                             if (this.useJson) {
                                 structArr.push('json:"' + fieldJsonName + '"')
+                            }
+                            if (this.useGorm) {
+                                structArr.push('gorm:"column:'+ fieldJsonName +'"')
                             }
                             if (this.useForm) {
                                 structArr.push('form:"' + fieldJsonName + '"')
@@ -161,7 +161,7 @@ new Vue({
     },
     methods: {
       handleSelect(key, keyPath) {
-        
+
       },
       setCache(data) {
         var message = {
@@ -209,6 +209,6 @@ function getTypeMap() {
         'timestramp': 'int64',
         'enum': 'string',
         'set': 'string',
-        'blob': 'string' 
+        'blob': 'string'
     }
 }
